@@ -1,0 +1,63 @@
+version: "3.8"
+
+services:
+
+  mysql-db:
+
+    image: mysql:8
+
+    container_name: mysql-db
+
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: employee_db
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+    networks:
+      - employee-network
+
+
+
+  employee-api:
+
+    image: employee-api:v1
+
+    container_name: employee-api
+
+    restart: always
+
+    depends_on:
+      - mysql-db
+
+    ports:
+      - "8080:8080"
+
+    environment:
+
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/employee_db
+
+      SPRING_DATASOURCE_USERNAME: root
+
+      SPRING_DATASOURCE_PASSWORD: root
+
+    networks:
+      - employee-network
+
+
+
+volumes:
+
+  mysql-data:
+
+
+
+networks:
+
+  employee-network:
