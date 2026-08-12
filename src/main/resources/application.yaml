@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+
+spring:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee_db
+    username: root
+    password: root
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+
+
+management:
+
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - metrics
+          - prometheus
+
+
+springdoc:
+
+  swagger-ui:
+    path: /swagger-ui.html

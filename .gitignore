@@ -1,0 +1,25 @@
+# Terraform
+.terraform/
+**/.terraform/
+
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+crash.log
+crash.*.log
+
+# Maven
+target/
+**/target/
+
+# Java
+*.class
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

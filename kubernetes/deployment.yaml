@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+
+metadata:
+
+  name: employee-api
+
+  namespace: employee-dev
+
+
+
+spec:
+
+  replicas: 3
+
+
+  selector:
+
+    matchLabels:
+
+      app: employee-api
+
+
+
+  template:
+
+
+    metadata:
+
+      labels:
+
+        app: employee-api
+
+
+
+    spec:
+
+
+      containers:
+
+
+      - name: employee-api
+
+
+        image: 786228585523.dkr.ecr.ap-southeast-1.amazonaws.com/employee-management-api:latest
+        imagePullPolicy: Always
+
+        ports:
+
+        - containerPort: 8080
+
+
+
+        env:
+
+
+        - name: SPRING_DATASOURCE_URL
+
+          value: jdbc:mysql://mysql-service:3306/employee_db
+
+
+
+        - name: SPRING_DATASOURCE_USERNAME
+
+          valueFrom:
+
+            secretKeyRef:
+
+              name: employee-secret
+
+              key: DB_USERNAME
+
+
+
+        - name: SPRING_DATASOURCE_PASSWORD
+
+          valueFrom:
+
+            secretKeyRef:
+
+              name: employee-secret
+
+              key: DB_PASSWORD
