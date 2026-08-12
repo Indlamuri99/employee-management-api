@@ -1,4 +1,4 @@
-```yaml
+
 name: Employee API CI/CD
 
 on:
@@ -292,4 +292,4 @@ jobs:
         run: |
           kubectl get svc \
             -n ${{ env.K8S_NAMESPACE }}
-```
+
