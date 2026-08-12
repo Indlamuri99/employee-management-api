@@ -7,7 +7,11 @@ metadata:
 
   name: employee-api
 
+<<<<<<< HEAD
   namespace: employee-dev
+=======
+  namespace: employee-prod
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 
 
 
@@ -44,8 +48,13 @@ spec:
       - name: employee-api
 
 
+<<<<<<< HEAD
         image: 786228585523.dkr.ecr.ap-southeast-1.amazonaws.com/employee-management-api:latest
         imagePullPolicy: Always
+=======
+        image: your-dockerhub-user/employee-api:v1
+
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 
         ports:
 

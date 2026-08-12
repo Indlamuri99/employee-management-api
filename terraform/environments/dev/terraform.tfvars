@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 environment = "dev"
 
 # VPC
@@ -23,3 +24,14 @@ min_size = 1
 max_size = 2
 
 eks_instance_type = "t3.medium"
+=======
+environment="dev"
+
+vpc_cidr="10.0.0.0/16"
+
+master_instance_type="t3.medium"
+
+worker_instance_type="t3.medium"
+
+worker_count=2
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7

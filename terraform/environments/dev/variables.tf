@@ -1,9 +1,14 @@
 variable "environment" {
+<<<<<<< HEAD
   type = string
+=======
+ type = string
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 }
 
 
 variable "vpc_cidr" {
+<<<<<<< HEAD
   type = string
 }
 
@@ -14,35 +19,64 @@ variable "instance_name"{
 
 variable "public_subnet_cidr" {
   type = string
+=======
+ type = string
+}
+
+
+variable "public_subnet_cidr" {
+ type = string
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 }
 
 
 variable "private_subnet_cidr" {
+<<<<<<< HEAD
   type = string
+=======
+ type = string
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 }
 
 
 variable "ami_id" {
+<<<<<<< HEAD
   type = string
+=======
+ type = string
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 }
 
 
 variable "key_name" {
+<<<<<<< HEAD
   type = string
+=======
+ type = string
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 }
 
 
 variable "master_instance_type" {
+<<<<<<< HEAD
   type = string
+=======
+ type = string
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 }
 
 
 variable "worker_instance_type" {
+<<<<<<< HEAD
   type = string
+=======
+ type = string
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 }
 
 
 variable "worker_count" {
+<<<<<<< HEAD
   type = number
 }
 
@@ -144,3 +178,7 @@ variable "role_name"{
 
     type = string
 }
+=======
+ type = number
+}
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7

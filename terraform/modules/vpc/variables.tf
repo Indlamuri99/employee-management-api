@@ -11,8 +11,22 @@ variable "instance_type" {
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+variable "subnet_id" {
+  description = "Subnet where EC2 will be created"
+  type        = string
+}
+
+
+variable "security_group_ids" {
+  description = "Security groups attached to EC2"
+  type        = list(string)
+}
+
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 
 variable "instance_name" {
   description = "EC2 instance name"
@@ -37,6 +51,7 @@ variable "count_instance" {
   description = "Number of EC2 instances"
   type        = number
   default     = 1
+<<<<<<< HEAD
 }
 variable "vpc_cidr" {
 
@@ -60,4 +75,6 @@ variable "availability_zone_1" {
 
 variable "availability_zone_2" {
   type = string
+=======
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 }

@@ -2,6 +2,7 @@ module "vpc" {
 
   source = "../../modules/vpc"
 
+<<<<<<< HEAD
   vpc_cidr = var.vpc_cidr
   key_name = var.key_name
   ami_id = var.ami_id
@@ -16,10 +17,24 @@ module "vpc" {
 
 }
 
+=======
+  environment = var.environment
+
+  vpc_cidr = var.vpc_cidr
+
+  public_subnet_cidr = var.public_subnet_cidr
+
+  private_subnet_cidr = var.private_subnet_cidr
+
+}
+
+
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 module "security_group" {
 
   source = "../../modules/security-group"
 
+<<<<<<< HEAD
   name        = "${var.environment}-kubernetes-sg"
   description = "Security Group for Kubernetes Cluster"
 
@@ -107,5 +122,67 @@ module "eks" {
   min_size = var.min_size
 
   max_size = var.max_size
+=======
+  vpc_id = module.vpc.vpc_id
+
+  environment = var.environment
+
+}
+
+
+
+module "master" {
+
+  source = "../../modules/ec2"
+
+
+  ami_id = var.ami_id
+
+  instance_type = var.master_instance_type
+
+  subnet_id = module.vpc.private_subnet_id
+
+
+  security_group_ids = [
+    module.security_group.kubernetes_sg_id
+  ]
+
+
+  key_name = var.key_name
+
+  instance_name = "dev-k8s-master"
+
+  count_instance = 1
+
+}
+
+
+
+module "worker" {
+
+  source = "../../modules/ec2"
+
+
+  ami_id = var.ami_id
+
+  instance_type = var.worker_instance_type
+
+
+  subnet_id = module.vpc.private_subnet_id
+
+
+  security_group_ids = [
+    module.security_group.kubernetes_sg_id
+  ]
+
+
+  key_name = var.key_name
+
+
+  instance_name = "dev-k8s-worker"
+
+
+  count_instance = var.worker_count
+>>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
 
 }
