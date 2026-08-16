@@ -20,10 +20,3 @@ output "security_group_arn" {
 
   value = aws_security_group.this.arn
 
-<<<<<<< HEAD
-}
-output "kubernetes_sg_id" {
-  value = aws_security_group.this.id
-=======
->>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
-}

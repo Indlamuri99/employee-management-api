@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-@RestController
-public class HomeController {
-
-    @GetMapping("/")
-    public String home() {
-        return "Welcome to Employee Management API";
-    }
-=======
 package com.company.employee.controller;
 
 
@@ -85,5 +76,3 @@ public class EmployeeController {
     }
 
 
->>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
-}

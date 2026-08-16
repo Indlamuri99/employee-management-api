@@ -7,33 +7,5 @@ metadata:
 
   name: employee-service
 
-<<<<<<< HEAD
-  namespace: employee-dev
-=======
   namespace: employee-prod
->>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
-
-
-
-spec:
-
-  selector:
-
-    app: employee-api
-
-
-
-  ports:
-
-
-  - port: 80
-
-    targetPort: 8080
-
-
-
-<<<<<<< HEAD
-  type: LoadBalancer
-=======
   type: ClusterIP
->>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7

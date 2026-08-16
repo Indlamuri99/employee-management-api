@@ -53,8 +53,4 @@ variable "tags" {
   description = "Resource Tags"
   type        = map(string)
   default     = {}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 74950808049ba5fe4b83f659248308a2a9fea6e7
